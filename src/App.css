@@ -1,3 +1,49 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr 8fr 1fr;
+  height: 100vh;
+}
+
+.Title {
+  border: solid 2px red;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.Navbar {
+  border: solid 2px blue;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: space-around;
+}
+.Router {
+  border: solid 2px magenta;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.Footer {
+  border: solid 2px green;
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+.Home {
+  border: solid 2px purple;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+.Articles {
+  border: solid 2px orangered;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.Sidebar {
+  border: solid 2px magenta;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
