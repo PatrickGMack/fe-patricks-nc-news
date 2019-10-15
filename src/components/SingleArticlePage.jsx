@@ -1,7 +1,14 @@
 import React from 'react';
+import Article from './Article';
+import Comments from './Comments';
 
-const SingleArticlePage = () => {
-  return <div>Single Article</div>;
+const SingleArticlePage = props => {
+  return (
+    <div className="SingleArticlePage">
+      <Article articleId={props.articleId} />
+      <Comments />
+    </div>
+  );
 };
 
 export default SingleArticlePage;

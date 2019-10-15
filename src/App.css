@@ -23,6 +23,8 @@
   border: solid 2px magenta;
   grid-column: 1/2;
   grid-row: 3/4;
+  /* overflow-y: scroll; */
+  height: 100%;
 }
 .Footer {
   border: solid 2px green;
@@ -41,8 +43,33 @@
   border: solid 2px orangered;
   grid-column: 1/2;
   grid-row: 1/2;
+  overflow-y: scroll;
+  height: 80vh;
+}
+.ArticleCard {
+  border: solid 1px black;
 }
 .Sidebar {
+  border: solid 2px magenta;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.SingleArticlePage {
+  border: solid 2px purple;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+.Article {
+  border: solid 2px orangered;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  overflow-y: scroll;
+  height: 80vh;
+}
+.Comments {
   border: solid 2px magenta;
   grid-column: 2/3;
   grid-row: 1/2;

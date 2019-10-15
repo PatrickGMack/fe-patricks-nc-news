@@ -1,12 +1,15 @@
 import Articles from './Articles';
 import Sidebar from './Sidebar';
-
 import React from 'react';
 
-const Home = () => {
+const Home = props => {
   return (
     <div className="Home">
-      <Articles />
+      {/* <Router className="HomeRouter">
+        <Articles path="/" />
+        <Articles path="/articles/topics/:slug" />
+      </Router> */}
+      <Articles topic={props.slug} />
       <Sidebar />
     </div>
   );

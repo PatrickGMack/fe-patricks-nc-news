@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from '@reach/router';
 import { fetchTopics } from '../api';
+import { topicFormat } from '../utils/utils';
 
 class Navbar extends Component {
   state = {
@@ -8,9 +10,12 @@ class Navbar extends Component {
   render() {
     return (
       <div className="Navbar">
-        {console.log(this.state.topics)}
         {this.state.topics.map(topic => {
-          return <span>{topic.slug}</span>;
+          return (
+            <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
+              {topicFormat(topic.slug)}
+            </Link>
+          );
         })}
       </div>
     );

@@ -12,9 +12,10 @@ function App() {
     <div className="App">
       <Title />
       <Navbar />
-      <Router className="Router">
+      <Router className="AppRouter">
         <Home path="/" />
-        <SingleArticlePage path="/articles/:id" />
+        <Home path="/articles/topics/:slug" />
+        <SingleArticlePage path="/articles/:articleId" />
       </Router>
       <Footer />
     </div>
