@@ -73,4 +73,10 @@
   border: solid 2px magenta;
   grid-column: 2/3;
   grid-row: 1/2;
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+.CommentCard {
+  border: solid 2px goldenrod;
 }

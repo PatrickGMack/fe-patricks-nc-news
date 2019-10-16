@@ -6,7 +6,7 @@ const SingleArticlePage = props => {
   return (
     <div className="SingleArticlePage">
       <Article articleId={props.articleId} />
-      <Comments />
+      <Comments articleId={props.articleId} user={props.user} />
     </div>
   );
 };

@@ -19,8 +19,20 @@ export const fetchArticleById = async articleId => {
   return article.data.article;
 };
 
-// export const fetchArticles = async articleId => {
-//   const articles = await request.get('/articles', { params: { articleId } });
+export const fetchComments = async articleId => {
+  const comments = await request.get(`/articles/${articleId}/comments`);
+  return comments.data;
+};
 
-//   return articles.data.articles;
-// };
+export const addComment = async (articleId, newCommentObj) => {
+  const addedComment = await request.post(
+    `/articles/${articleId}/comments`,
+    newCommentObj
+  );
+  return addedComment.data;
+};
+
+export const deleteComment = async commentId => {
+  const deleted = await request.delete(`/comments/${commentId}`);
+  return deleted;
+};

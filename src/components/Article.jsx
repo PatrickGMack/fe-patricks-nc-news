@@ -45,7 +45,6 @@ class Article extends React.Component {
     this.addArticle();
   }
   addArticle = async () => {
-    console.log(this.props.articleId);
     const article = await fetchArticleById(this.props.articleId);
     this.setState({ article, isLoaded: true });
   };
