@@ -2,52 +2,70 @@ import React, { Component } from 'react';
 import { fetchComments, addComment } from '../api';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
+import ErrorPage from './ErrorPage';
 
 class Comments extends Component {
   state = {
-    comments: []
+    comments: [],
+    errMsg: ''
   };
   render() {
-    const { comments } = this.state;
-    return (
-      <main className="Comments">
-        <strong>
-          <em>Comments</em>
-        </strong>
-        <p>Add comment:</p>{' '}
-        <CommentAdder
-          user={this.props.user}
-          addUserComment={this.addUserComment}
-        />
-        {comments.map(comment => {
-          return (
-            <CommentCard
-              {...comment}
-              key={comment.comment_id}
-              rerender={this.rerender}
-              user={this.props.user}
-            />
-          );
-        })}
-      </main>
-    );
+    const { comments, errMsg } = this.state;
+    if (errMsg === '') {
+      return (
+        <main className="Comments">
+          <strong>
+            <em>Comments</em>
+          </strong>
+          <p>Add comment:</p>{' '}
+          <CommentAdder
+            user={this.props.user}
+            addUserComment={this.addUserComment}
+          />
+          {comments.map(comment => {
+            return (
+              <CommentCard
+                {...comment}
+                key={comment.comment_id}
+                rerender={this.rerender}
+                user={this.props.user}
+              />
+            );
+          })}
+        </main>
+      );
+    } else {
+      return <ErrorPage errMsg={errMsg} />;
+    }
   }
   componentDidMount() {
     this.addComments();
   }
   addComments = async () => {
-    const comments = await fetchComments(this.props.articleId);
-    this.setState({ comments });
+    try {
+      const comments = await fetchComments(this.props.articleId);
+      this.setState({ comments });
+    } catch (err) {
+      this.setState({
+        errMsg: "Can't load comments right now, please try again later!"
+      });
+    }
   };
   addUserComment = newComment => {
     addComment(this.props.articleId, {
       username: this.props.user,
       body: newComment
-    }).then(({ addedComment }) => {
-      this.setState(currentState => {
-        return { comments: [addedComment, ...currentState.comments] };
+    })
+      .then(({ addedComment }) => {
+        this.setState(currentState => {
+          return { comments: [addedComment, ...currentState.comments] };
+        });
+      })
+      .catch(err => {
+        this.setState({
+          errMsg: "Can't add that comment right now, please try again later!"
+        });
       });
-    });
   };
   rerender = () => {
     this.addComments();

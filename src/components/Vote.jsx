@@ -3,18 +3,26 @@ import { patchVotes } from '../api';
 
 class Vote extends Component {
   state = {
-    optimisticVotes: this.props.votes
+    optimisticVotes: 0
   };
   render() {
     return (
       <div className="Vote">
         <form action="">
-          Votes: {this.state.optimisticVotes}
+          Votes: {this.state.optimisticVotes + this.props.votes}
           <br />
-          <button name="1" onClick={this.voteChange}>
+          <button
+            name="1"
+            onClick={this.voteChange}
+            disabled={this.state.optimisticVotes === 1}
+          >
             Upvote
           </button>
-          <button name="-1" onClick={this.voteChange}>
+          <button
+            name="-1"
+            onClick={this.voteChange}
+            disabled={this.state.optimisticVotes === -1}
+          >
             Downvote
           </button>
         </form>
