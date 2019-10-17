@@ -1,6 +1,7 @@
 import React from 'react';
 import { dateFormat } from '../utils/utils';
 import DeleteComment from './DeleteComment';
+import Vote from './Vote';
 
 const CommentCard = ({
   author,
@@ -8,7 +9,7 @@ const CommentCard = ({
   votes,
   created_at,
   comment_id,
-  deleteRender,
+  rerender,
   user
 }) => {
   return (
@@ -18,13 +19,12 @@ const CommentCard = ({
         <br />
         {body}
         <br />
-        Votes: {votes}
-        <br />
         Posted on: {dateFormat(created_at)}
       </p>
       {user === author && (
-        <DeleteComment comment_id={comment_id} deleteRender={deleteRender} />
+        <DeleteComment comment_id={comment_id} rerender={rerender} />
       )}
+      <Vote target="comments" votes={votes} item_id={comment_id} />
     </div>
   );
 };

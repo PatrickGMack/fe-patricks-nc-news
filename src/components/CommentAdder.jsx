@@ -8,7 +8,11 @@ class CommentAdder extends Component {
     return (
       <div>
         <form action="">
-          <input type="text" onChange={this.handleChange} />
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.comment}
+          />
           <button onClick={this.handleClick}>Post</button>
         </form>
       </div>
@@ -20,6 +24,7 @@ class CommentAdder extends Component {
   handleClick = e => {
     e.preventDefault();
     this.props.addUserComment(this.state.comment);
+    this.setState({ comment: '' });
   };
 }
 

@@ -4,7 +4,7 @@ import { deleteComment } from '../api';
 const DeleteComment = props => {
   const handleClick = () => {
     deleteComment(props.comment_id).then(() => {
-      props.deleteRender();
+      props.rerender();
     });
   };
   return <button onClick={handleClick}>Delete</button>;

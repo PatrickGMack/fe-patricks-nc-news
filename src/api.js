@@ -9,8 +9,10 @@ export const fetchTopics = async () => {
   return topics.data.topics;
 };
 
-export const fetchArticles = async topic => {
-  const articles = await request.get('/articles', { params: { topic } });
+export const fetchArticles = async (topic, sort_by) => {
+  const articles = await request.get('/articles', {
+    params: { topic, sort_by }
+  });
   return articles.data.articles;
 };
 
@@ -35,4 +37,9 @@ export const addComment = async (articleId, newCommentObj) => {
 export const deleteComment = async commentId => {
   const deleted = await request.delete(`/comments/${commentId}`);
   return deleted;
+};
+
+export const patchVotes = async (target, item_id, voteObj) => {
+  const votes = await request.patch(`/${target}/${item_id}`, voteObj);
+  return votes.data.comment;
 };

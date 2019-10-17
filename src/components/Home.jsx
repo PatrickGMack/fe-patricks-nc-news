@@ -5,6 +5,7 @@ import React from 'react';
 const Home = props => {
   return (
     <div className="Home">
+      {console.log(props)}
       <Articles topic={props.slug} />
       <Sidebar />
     </div>

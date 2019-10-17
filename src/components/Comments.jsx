@@ -24,7 +24,7 @@ class Comments extends Component {
             <CommentCard
               {...comment}
               key={comment.comment_id}
-              deleteRender={this.deleteRender}
+              rerender={this.rerender}
               user={this.props.user}
             />
           );
@@ -49,7 +49,7 @@ class Comments extends Component {
       });
     });
   };
-  deleteRender = () => {
+  rerender = () => {
     this.addComments();
   };
 }

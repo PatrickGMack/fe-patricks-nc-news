@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchArticleById } from '../api';
 import { topicFormat, dateFormat } from '../utils/utils';
+import Vote from './Vote';
 
 class Article extends React.Component {
   state = {
@@ -15,26 +16,31 @@ class Article extends React.Component {
       topic,
       author,
       created_at,
-      comment_count
+      comment_count,
+      article_id
     } = this.state.article;
     return (
       <div className="Article">
         {this.state.isLoaded ? (
-          <p>
-            <strong>{title}</strong>
-            <br />
-            <em>{author}</em>
-            <br />
-            {body}
-            <br />
-            {topicFormat(topic)}
-            <br />
-            Published on: {dateFormat(created_at)}
-            <br />
-            Votes: {votes}
-            <br />
-            Comments: {comment_count}
-          </p>
+          <div>
+            <p>
+              <strong>{title}</strong>
+              <br />
+              <em>{author}</em>
+              <br />
+              {body}
+              <br />
+              {topicFormat(topic)}
+              <br />
+              Published on: {dateFormat(created_at)}
+              <br />
+              Votes: {votes}
+              <br />
+              Comments: {comment_count}
+              <br />
+            </p>
+            <Vote target="articles" votes={votes} item_id={article_id} />
+          </div>
         ) : (
           <p>Loading...</p>
         )}
