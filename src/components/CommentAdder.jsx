@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-materialize';
 
 class CommentAdder extends Component {
   state = {
@@ -9,11 +10,20 @@ class CommentAdder extends Component {
       <div>
         <form action="">
           <input
+            required
             type="text"
             onChange={this.handleChange}
             value={this.state.comment}
           />
-          <button onClick={this.handleClick}>Post</button>
+          <Button
+            className="#b71c1c red darken-4"
+            waves="light"
+            style={{ margin: '5px' }}
+            name="1"
+            onClick={this.handleClick}
+          >
+            Post
+          </Button>
         </form>
       </div>
     );

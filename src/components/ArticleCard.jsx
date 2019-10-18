@@ -13,8 +13,8 @@ const ArticleCard = ({
   article_id
 }) => {
   return (
-    <CardPanel className="ArticleCard">
-      <Link to={`/articles/${article_id}`}>
+    <CardPanel className="ArticlePanel">
+      <Link to={`/articles/${article_id}`} className="ArticleCard">
         <p>
           <strong>{title}</strong>
           <br />

@@ -19,7 +19,7 @@ class Navbar extends Component {
               waves="light"
             >
               <Link className="TopicLink" to={`/articles/topics/${topic.slug}`}>
-                {topicFormat(topic.slug)}
+                {'<' + topicFormat(topic.slug) + ' />'}
               </Link>
             </Button>
           );

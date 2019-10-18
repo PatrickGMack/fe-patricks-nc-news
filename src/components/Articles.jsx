@@ -14,9 +14,10 @@ class Articles extends Component {
     if (errMsg === '') {
       return (
         <main className="Articles">
+          <strong>News Articles</strong>
           <select
             name=""
-            id=""
+            id="SortBy"
             defaultValue="Sort By..."
             onChange={this.handleSelect}
           >

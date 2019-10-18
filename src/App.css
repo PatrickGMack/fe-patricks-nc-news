@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 .App {
   text-align: center;
   display: grid;
@@ -19,19 +20,17 @@
   justify-content: space-around;
 }
 .Router {
-  border: solid 2px magenta;
   grid-column: 1/2;
   grid-row: 3/4;
   /* overflow-y: scroll; */
   height: 100%;
 }
 .Footer {
-  border: solid 2px green;
+  border: solid 2px black;
   grid-column: 1/2;
   grid-row: 4/5;
 }
 .Home {
-  border: solid 2px purple;
   height: 100%;
   width: 100%;
   display: grid;
@@ -39,23 +38,23 @@
   grid-template-rows: 1fr;
 }
 .Articles {
-  border: solid 2px orangered;
+  background-color: #ededed;
   grid-column: 1/2;
   grid-row: 1/2;
   overflow-y: scroll;
   height: 80vh;
 }
 .ArticleCard {
-  border: solid 1px black;
   color: black;
 }
 .Sidebar {
-  border: solid 2px magenta;
+  background-color: #ededed;
   grid-column: 2/3;
   grid-row: 1/2;
+  overflow-y: scroll;
+  height: 80vh;
 }
 .SingleArticlePage {
-  border: solid 2px purple;
   height: 100%;
   width: 100%;
   display: grid;
@@ -63,24 +62,28 @@
   grid-template-rows: 1fr;
 }
 .Article {
-  border: solid 2px orangered;
   grid-column: 1/2;
   grid-row: 1/2;
   overflow-y: scroll;
   height: 80vh;
 }
 .Comments {
-  border: solid 2px magenta;
+  border: solid 1px black;
   grid-column: 2/3;
   grid-row: 1/2;
   overflow-y: scroll;
   height: 80vh;
 }
 
-.CommentCard {
-  border: solid 2px goldenrod;
-}
-
 .TopicLink {
   color: white;
+}
+.ArticlePanel {
+  border: solid 1px black;
+}
+.ArticlePanel:hover {
+  transform: scaleY(1.04);
+}
+#SortBy {
+  display: block;
 }
