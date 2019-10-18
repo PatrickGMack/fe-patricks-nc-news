@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
 import Title from './components/Title';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import SingleArticlePage from './components/SingleArticlePage';
 import { Router } from '@reach/router';
+import 'jquery';
+import 'materialize-css/dist/js/materialize.js';
+import 'materialize-css/dist/css/materialize.css';
+import './App.css';
 
 class App extends React.Component {
   state = {

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 .App {
   text-align: center;
   display: grid;
@@ -7,13 +8,11 @@
 }
 
 .Title {
-  border: solid 2px red;
   grid-column: 1/2;
   grid-row: 1/2;
 }
 
 .Navbar {
-  border: solid 2px blue;
   grid-column: 1/2;
   grid-row: 2/3;
   display: flex;
@@ -48,6 +47,7 @@
 }
 .ArticleCard {
   border: solid 1px black;
+  color: black;
 }
 .Sidebar {
   border: solid 2px magenta;
@@ -79,4 +79,8 @@
 
 .CommentCard {
   border: solid 2px goldenrod;
+}
+
+.TopicLink {
+  color: white;
 }

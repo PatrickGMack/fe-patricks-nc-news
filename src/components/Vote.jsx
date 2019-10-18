@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { patchVotes } from '../api';
+import { Button } from 'react-materialize';
 
 class Vote extends Component {
   state = {
@@ -11,20 +12,24 @@ class Vote extends Component {
         <form action="">
           Votes: {this.state.optimisticVotes + this.props.votes}
           <br />
-          <button
+          <Button
+            className="#b71c1c red darken-4"
+            waves="light"
+            icon="thumb_up"
+            style={{ margin: '5px' }}
             name="1"
             onClick={this.voteChange}
             disabled={this.state.optimisticVotes === 1}
-          >
-            Upvote
-          </button>
-          <button
+          />
+          <Button
+            style={{ margin: '5px' }}
+            className="#b71c1c red darken-4"
+            waves="light"
             name="-1"
+            icon="thumb_down"
             onClick={this.voteChange}
             disabled={this.state.optimisticVotes === -1}
-          >
-            Downvote
-          </button>
+          />
         </form>
       </div>
     );

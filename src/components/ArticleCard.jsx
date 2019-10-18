@@ -1,6 +1,7 @@
 import React from 'react';
 import { topicFormat, dateFormat } from '../utils/utils';
 import { Link } from '@reach/router';
+import { CardPanel } from 'react-materialize';
 
 const ArticleCard = ({
   title,
@@ -12,8 +13,8 @@ const ArticleCard = ({
   article_id
 }) => {
   return (
-    <Link to={`/articles/${article_id}`}>
-      <div className="ArticleCard">
+    <CardPanel className="ArticleCard">
+      <Link to={`/articles/${article_id}`}>
         <p>
           <strong>{title}</strong>
           <br />
@@ -27,8 +28,8 @@ const ArticleCard = ({
           <br />
           Comments: {comment_count}
         </p>
-      </div>
-    </Link>
+      </Link>
+    </CardPanel>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { deleteComment } from '../api';
+import { Button } from 'react-materialize';
 
 const DeleteComment = props => {
   const handleClick = () => {
@@ -7,7 +8,11 @@ const DeleteComment = props => {
       props.rerender();
     });
   };
-  return <button onClick={handleClick}>Delete</button>;
+  return (
+    <Button small onClick={handleClick} className="#b71c1c red darken-4">
+      Delete
+    </Button>
+  );
 };
 
 export default DeleteComment;
