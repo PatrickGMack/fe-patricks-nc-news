@@ -22,6 +22,9 @@ body {
   display: flex;
   justify-content: space-around;
 }
+.Navbutton {
+  width: 1px;
+}
 .Router {
   grid-column: 1/2;
   grid-row: 3/4;
@@ -131,7 +134,7 @@ body {
   .Article {
     grid-column: 1;
     grid-row: 1;
-    overflow-y: visible;
+    /* overflow-y: visible; */
     height: 80vh;
     margin: 5%;
   }
@@ -141,8 +144,8 @@ body {
     grid-row: 2;
     overflow-y: visible;
     height: 93vh;
-    position: relative;
-    top: 30%;
+    /* position: relative;
+    top: 30%; */
   }
   .App {
     height: 1vh;
