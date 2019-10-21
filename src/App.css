@@ -125,21 +125,23 @@ body {
 }
 @media only screen and (max-width: 600px) {
   .SingleArticlePage {
+    grid-row: 4;
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    overflow-y: scroll;
+    grid-template-rows: auto auto auto;
+    overflow-y: visible;
   }
   .Article {
     grid-column: 1;
     grid-row: 1;
-    /* overflow-y: visible; */
-    height: 80vh;
+    overflow-y: visible;
+    height: auto;
     margin: 5%;
   }
   .Comments {
-    border: solid 1px black;
+    border: solid 0px;
     grid-column: 1;
     grid-row: 2;
     overflow-y: visible;
@@ -148,7 +150,8 @@ body {
     top: 30%; */
   }
   .App {
-    height: 1vh;
+    grid-template-rows: auto auto auto auto auto;
+    height: 100vh;
   }
   .Sidebar {
     display: none;
@@ -164,4 +167,16 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
+  .ArticlePanel {
+    border: solid 1px purple;
+    margin: 5%;
+  }
+  /* .Footer {
+    border: solid 2px black;
+    /* grid-column: 1; */
+  /* position: relative;
+    grid-row: 5; */
+  /* background-color: #212121;
+    color: white; */
+  /* } */
 }
