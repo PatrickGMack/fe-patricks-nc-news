@@ -9,7 +9,7 @@ const DeleteComment = props => {
     });
   };
   return (
-    <Button small onClick={handleClick} className="#b71c1c red darken-4">
+    <Button onClick={handleClick} className="#b71c1c red darken-4">
       Delete
     </Button>
   );

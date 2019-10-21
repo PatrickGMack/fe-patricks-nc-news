@@ -13,10 +13,19 @@ class Sidebar extends React.Component {
     if (errMsg === '') {
       return (
         <div className="Sidebar">
-          <strong>Top Rated Articles</strong>
+          <h5>
+            {' '}
+            <span className="#b71c1c-text red-text darken-4">{'<'}</span> Top
+            Rated Articles{' '}
+            <span className="#b71c1c-text red-text darken-4">{'/>'}</span>
+          </h5>
           {this.state.articles.slice(0, 3).map(article => {
             return (
-              <ArticleCard {...article} key={article.article_id + ' top'} />
+              <ArticleCard
+                {...article}
+                key={article.article_id + ' top'}
+                className="TopArticles"
+              />
             );
           })}
         </div>

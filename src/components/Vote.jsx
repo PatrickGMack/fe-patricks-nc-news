@@ -8,8 +8,8 @@ class Vote extends Component {
   };
   render() {
     return (
-      <div className="Vote">
-        <form action="">
+      <>
+        <form className="Vote">
           Votes: {this.state.optimisticVotes + this.props.votes}
           <br />
           <Button
@@ -31,12 +31,15 @@ class Vote extends Component {
             disabled={this.state.optimisticVotes === -1}
           />
         </form>
-      </div>
+      </>
     );
   }
   voteChange = e => {
     e.preventDefault();
-    const vote = +e.target.name;
+    const vote =
+      e.target.name === undefined
+        ? +e.target.parentElement.name
+        : +e.target.name;
     const voteObj = { inc_votes: vote };
     patchVotes(this.props.target, this.props.item_id, voteObj);
     this.setState(currentState => {

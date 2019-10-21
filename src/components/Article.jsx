@@ -27,14 +27,22 @@ class Article extends React.Component {
         <div className="Article">
           {this.state.isLoaded ? (
             <div>
+              <h4>
+                <span className="ArticleStyle #b71c1c-text red-text darken-4">
+                  {'<'}
+                </span>
+                {title}
+                <span className="ArticleStyle #b71c1c-text red-text darken-4">
+                  {' />'}
+                </span>
+              </h4>
               <p>
-                <strong>{title}</strong>
-                <br />
-                <em>{author}</em>
+                <em>By: {author}</em>
                 <br />
                 {body}
                 <br />
-                <em>{topicFormat(topic)}</em>
+                <br />
+                <em>Topic: {topicFormat(topic)}</em>
                 <br />
                 Published on: {dateFormat(created_at)}
                 <br />

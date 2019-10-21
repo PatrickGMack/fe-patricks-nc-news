@@ -7,6 +7,9 @@
   grid-template-rows: 1fr 0.5fr 8fr 1fr;
   height: 100vh;
 }
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .Title {
   grid-column: 1/2;
@@ -29,6 +32,8 @@
   border: solid 2px black;
   grid-column: 1/2;
   grid-row: 4/5;
+  background-color: #212121;
+  color: white;
 }
 .Home {
   height: 100%;
@@ -44,9 +49,11 @@
   overflow-y: scroll;
   height: 80vh;
 }
+
 .ArticleCard {
   color: black;
 }
+
 .Sidebar {
   background-color: #ededed;
   grid-column: 2/3;
@@ -54,6 +61,7 @@
   overflow-y: scroll;
   height: 80vh;
 }
+
 .SingleArticlePage {
   height: 100%;
   width: 100%;
@@ -61,18 +69,20 @@
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr;
 }
+
 .Article {
   grid-column: 1/2;
   grid-row: 1/2;
   overflow-y: scroll;
   height: 80vh;
+  margin: 5%;
 }
 .Comments {
   border: solid 1px black;
   grid-column: 2/3;
   grid-row: 1/2;
   overflow-y: scroll;
-  height: 80vh;
+  height: 93vh;
 }
 
 .TopicLink {
@@ -80,10 +90,75 @@
 }
 .ArticlePanel {
   border: solid 1px black;
+  margin: 5%;
 }
 .ArticlePanel:hover {
-  transform: scaleY(1.04);
+  transform: scale(1.04);
+  transition: 100ms;
 }
 #SortBy {
   display: block;
+  color: black;
+  cursor: pointer;
+  background-color: #d8d8d8;
+  text-align: center;
+  max-width: 300px;
+  max-height: 30px;
+}
+#SortBy:hover {
+  background-color: #bfbdbd;
+}
+
+.SortBySelect {
+  display: flex;
+  justify-content: center;
+}
+.commentInput {
+  text-align: center;
+}
+
+.CommentCard {
+  border: solid 1px black;
+}
+@media only screen and (max-width: 600px) {
+  .SingleArticlePage {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+  }
+  .Article {
+    grid-column: 1;
+    grid-row: 1;
+    overflow-y: visible;
+    height: 80vh;
+    margin: 5%;
+  }
+  .Comments {
+    border: solid 1px black;
+    grid-column: 1;
+    grid-row: 2;
+    overflow-y: visible;
+    height: 93vh;
+    position: relative;
+    top: 30%;
+  }
+  .App {
+    height: 1vh;
+  }
+  .Sidebar {
+    display: none;
+    width: 0px;
+  }
+  .Articles {
+    width: 100%;
+  }
+  .Home {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }

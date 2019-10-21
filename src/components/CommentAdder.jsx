@@ -10,10 +10,12 @@ class CommentAdder extends Component {
       <div>
         <form action="">
           <input
+            className="commentInput"
             required
             type="text"
             onChange={this.handleChange}
             value={this.state.comment}
+            placeholder="Write a comment..."
           />
           <Button
             className="#b71c1c red darken-4"

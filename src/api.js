@@ -40,6 +40,11 @@ export const deleteComment = async commentId => {
 };
 
 export const patchVotes = async (target, item_id, voteObj) => {
+  const refObj = {
+    comments: 'comment',
+    articles: 'article'
+  };
   const votes = await request.patch(`/${target}/${item_id}`, voteObj);
-  return votes.data.comment;
+  const commentOrArticle = refObj[target];
+  return votes.data[commentOrArticle].votes;
 };

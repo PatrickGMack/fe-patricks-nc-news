@@ -15,7 +15,12 @@ class Comments extends Component {
       return (
         <main className="Comments">
           <strong>
-            <em>Comments</em>
+            <h5>
+              {' '}
+              <span className="#b71c1c-text red-text darken-4">{'<'}</span>{' '}
+              Comments{' '}
+              <span className="#b71c1c-text red-text darken-4">{'/>'}</span>
+            </h5>
           </strong>
           <p>Add comment:</p>{' '}
           <CommentAdder

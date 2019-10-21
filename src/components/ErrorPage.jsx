@@ -6,6 +6,7 @@ class ErrorPage extends Component {
     return (
       <>
         <strong>
+          <br />
           Whoops! Sorry, but something went wrong...{' '}
           <span role="img" aria-label="awkward face">
             😕
