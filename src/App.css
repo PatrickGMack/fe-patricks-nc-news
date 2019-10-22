@@ -4,7 +4,7 @@
   text-align: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 0.5fr 8fr 1fr;
+  /* grid-template-rows: 1fr 0.5fr 8fr 1fr; */
   height: 100vh;
 }
 body {
@@ -28,7 +28,6 @@ body {
 .Router {
   grid-column: 1/2;
   grid-row: 3/4;
-  /* overflow-y: scroll; */
   height: 100%;
 }
 .Footer {
@@ -37,6 +36,8 @@ body {
   grid-row: 4/5;
   background-color: #212121;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 .Home {
   height: 100%;
@@ -49,7 +50,6 @@ body {
   background-color: #ededed;
   grid-column: 1/2;
   grid-row: 1/2;
-  overflow-y: scroll;
   height: 80vh;
 }
 
@@ -61,7 +61,7 @@ body {
   background-color: #ededed;
   grid-column: 2/3;
   grid-row: 1/2;
-  overflow-y: scroll;
+
   height: 80vh;
 }
 
@@ -76,7 +76,7 @@ body {
 .Article {
   grid-column: 1/2;
   grid-row: 1/2;
-  overflow-y: scroll;
+
   height: 80vh;
   margin: 5%;
 }
@@ -91,10 +91,12 @@ body {
 .TopicLink {
   color: white;
 }
+
 .ArticlePanel {
   border: solid 1px black;
   margin: 5%;
 }
+
 .ArticlePanel:hover {
   transform: scale(1.04);
   transition: 100ms;
@@ -123,6 +125,16 @@ body {
 .CommentCard {
   border: solid 1px black;
 }
+
+@media only screen and (min-width: 601px) {
+  .Articles {
+    overflow-y: scroll;
+  }
+  .Sidebar {
+    overflow-y: scroll;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .SingleArticlePage {
     grid-row: 4;
@@ -131,12 +143,11 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    overflow-y: visible;
   }
   .Article {
     grid-column: 1;
     grid-row: 1;
-    overflow-y: visible;
+
     height: auto;
     margin: 5%;
   }
@@ -144,15 +155,12 @@ body {
     border: solid 0px;
     grid-column: 1;
     grid-row: 2;
-    overflow-y: visible;
-    height: 93vh;
+    overflow-y: unset;
+    height: auto;
     /* position: relative;
     top: 30%; */
   }
-  .App {
-    grid-template-rows: auto auto auto auto auto;
-    height: 100vh;
-  }
+
   .Sidebar {
     display: none;
     width: 0px;
@@ -173,10 +181,10 @@ body {
   }
   /* .Footer {
     border: solid 2px black;
-    /* grid-column: 1; */
-  /* position: relative;
-    grid-row: 5; */
-  /* background-color: #212121;
-    color: white; */
-  /* } */
+    grid-column: 1;
+
+    grid-row: 3;
+    background-color: #212121;
+    color: white;
+  } */
 }

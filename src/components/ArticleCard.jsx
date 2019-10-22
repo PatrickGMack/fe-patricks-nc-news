@@ -16,7 +16,15 @@ const ArticleCard = ({
     <CardPanel className="ArticlePanel">
       <Link to={`/articles/${article_id}`} className="ArticleCard">
         <p>
-          <strong>{title}</strong>
+          <strong>
+            <span className="ArticleStyle #b71c1c-text red-text darken-4">
+              {'<'}
+            </span>
+            {title}
+            <span className="ArticleStyle #b71c1c-text red-text darken-4">
+              {' />'}
+            </span>
+          </strong>
           <br />
           <em>{author}</em>
           <br />

@@ -27,7 +27,7 @@ class App extends React.Component {
             user={this.state.user}
           />
         </Router>
-        <Footer />
+        <Footer user={this.state.user} />
       </div>
     );
   }
