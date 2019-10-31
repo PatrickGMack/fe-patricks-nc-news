@@ -23,6 +23,12 @@ npm start
 
 This will start the application in development mode and will open up http://localhost:3000 to view in the broswer.
 
+To run the tests, run:
+
+```
+npm test
+```
+
 `Tech Used`
 
 **React JS** was used as the framework for NC News' front end. View the docs here: https://reactjs.org/.
