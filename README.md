@@ -1,10 +1,11 @@
 ## Front End for Northcoders News Website
 
-By Patrick Mackintosh
+By [Patrick Mackintosh](https://github.com/PatrickGMack)
 
 `Motivation`
 
 This is the frontend to an end to end Northcoders News website, developed over 2 weeks during an intensive coding bootcamp.
+
 On the website users can view the many articles available, comment on the articles as well as vote up or down other comments and news. Users are able to filter news by topic, date, most popular and most engaged with.
 
 `Using the Repo`
@@ -28,6 +29,14 @@ To run the tests, run:
 ```
 npm test
 ```
+
+`Links`
+
+Hosted frontend website: https://nc-news-patrick.netlify.com/
+
+Hosted backend API: https://nc-news-patrick.netlify.com/
+
+Github backend repository: https://github.com/PatrickGMack/be-nc-news
 
 `Tech Used`
 
